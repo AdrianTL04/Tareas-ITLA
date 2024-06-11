@@ -1,0 +1,104 @@
+using System;
+
+namespace Comunidad
+{
+    
+    public class MiembroDeLaComunidad
+    {
+        public string Nombre { get; set; }
+        public string Documento { get; set; }
+
+        public MiembroDeLaComunidad(string nombre, string documento)
+        {
+            Nombre = nombre;
+            Documento = documento;
+        }
+
+        public void MostrarInformacion()
+        {
+            Console.WriteLine($"Nombre: {Nombre}, Documento: {Documento}");
+        }
+    }
+
+    
+    public class Empleado : MiembroDeLaComunidad
+    {
+        public Empleado(string nombre, string documento) : base(nombre, documento)
+        {
+        }
+    }
+
+    public class Estudiante : MiembroDeLaComunidad
+    {
+        public Estudiante(string nombre, string documento) : base(nombre, documento)
+        {
+        }
+    }
+
+    public class ExAlumno : MiembroDeLaComunidad
+    {
+        public ExAlumno(string nombre, string documento) : base(nombre, documento)
+        {
+           
+
+        }
+    }
+
+    
+    public class Docente : Empleado
+    {
+        public Docente(string nombre, string documento) : base(nombre, documento)
+        {
+        }
+    }
+
+    public class Administrativo : Empleado
+    {
+        public Administrativo(string nombre, string documento) : base(nombre, documento)
+        {
+        }
+    }
+
+  
+    public class Administrador : Docente
+    {
+        public Administrador(string nombre, string documento) : base(nombre, documento)
+        {
+        }
+    }
+
+    public class Maestro : Docente
+    {
+        public Maestro(string nombre, string documento) : base(nombre, documento)
+        {
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            MiembroDeLaComunidad miembro = new MiembroDeLaComunidad("Adrian Lorenzo", "12345");
+            Empleado empleado = new Empleado("Ana Torres", "23456");
+            Estudiante estudiante = new Estudiante("Alan Lorenzo", "34567");
+            ExAlumno exAlumno = new ExAlumno("Andres Lorenzo", "45678");
+            Docente docente = new Docente("Andrea Villar", "56789");
+            Administrativo administrativo = new Administrativo("Andy Lorenzo", "67890");
+            Administrador administrador = new Administrador("Albis Lorenzo", "78901");
+            Maestro maestro = new Maestro("Oscar Artiles", "89012");
+
+            
+            miembro.MostrarInformacion();
+            empleado.MostrarInformacion();
+            estudiante.MostrarInformacion();
+            exAlumno.MostrarInformacion();
+            docente.MostrarInformacion();
+            administrativo.MostrarInformacion();
+            administrador.MostrarInformacion();
+            maestro.MostrarInformacion();
+        }
+    }
+}
+
+
